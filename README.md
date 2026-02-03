@@ -7,3 +7,5 @@ This repository holds the problem sets used to deliberately practice the fundame
 Manny J Rodriguez
 
 https://mannyjrodriguez.com
+
+[![View Fluid_Mechanics_Fundamentals on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/183113-fluid_mechanics_fundamentals)
