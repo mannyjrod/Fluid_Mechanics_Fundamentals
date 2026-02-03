@@ -95,7 +95,7 @@ legend(labels, 'Location', 'bestoutside'); %[output:846a9e72]
 %% Optional: if you want to also save the figure
 % exportgraphics(gcf, "dp_vs_Q_grouped.png", "Resolution", 300);
 %%
-%[text] #### <u>Discussion</u>
+%[text] %[text:anchor:TMP_5f80] <u>Discussion</u>
 %[text] The curves do not collapse since the experiment's input parameters (independent variables - D, $\\mu$, $\\rho$, and *L*) have not been properly *nondimensionalized.* In other words, it is not possible to gain insight about the relationships between the parameters from this raw plot. 
 %[text] - \[Data collapse - is a way of establishing *scaling*; scaling may be accomplished through **nondimensionalization.** The law of dimensional homogeneity guarantees that every additive term in an equation has the same dimensions. \[1\]\] \
 %[text] When properly nondimensionalized, the data from many experiments will produce a family of curves (or a single curve) that reveals the underlying physics or makes a universal law more apparent. As an illustration of this claim, the two plots shown in the figure below show "raw" computational data (A) and collapse when plotted using suitable dimensionless variables (B) - as presented by Erlich, et.al. in their work on *Physical and geometric determinants of transport in feto-placental microvascular networks*. \[2\]
@@ -116,11 +116,13 @@ imshow('Computational-data-A-collapse-B.png') %[output:1ad78bda] %[output:1d86ea
 %[text] <u>Step 3</u>:
 %[text] As an initial guess, set the reduction $j$ as the number of primary dimensions --
 %[text] $j = 3$
-%[text] (a) If this initial guess is *correct*, the number of $\\Pi$'s, or dimensionless groups expected is:
+%[text] (a) If this initial guess is *correct*, the number of $\\Pi$'s, or dimensionless groups expected is $k$:
 %[text] $k = n - j = 6 - 3 = \\mathbf{3}$
 %%
 %[text] <u>Step 4</u>:
-%[text] Choose $j$ repeating parameters
+%[text] Choose $j$ repeating parameters --
+%[text] - **Hint of the day:** A *wise* choice of repeating parameters for most fluid flow problems is a **length**, a **velocity**, and a **mass** or **density**. \
+%[text] \[continue here, CALL the buckinghamPi function... -ERODRIGUEZ2, 2FEB2026 20:46\]
 %%
 %[text] ## Problem 2. Passive scalar transport from Reynolds Transport Theorem
 %[text] - \[A passive scalar is a scalar quantity that is transported by advection (the transfer of a substance, or matter, by bulk motion of a fluid) and diffusion in a flow but does not influence the velocity field or fluid dynamics.\] \
