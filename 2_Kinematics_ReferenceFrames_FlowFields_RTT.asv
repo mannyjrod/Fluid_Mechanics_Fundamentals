@@ -180,10 +180,7 @@ clipboard('copy', latex(results.piGroups))
 %[text] $\\Pi\_1 = \\Phi \\left( \\Pi\_2, \\Pi\_3 \\right)$ 
 %[text] $\\frac{\\Delta P}{\\rho U^2} = \\Phi \\left(Re, \\frac{L}{D} \\right)$                (5-7)
 %[text] - Note: The pure dimensionless constants are omitted from the functional relationship; they're "absorbed" into the function $\\Phi$. \
-%[text] This functional relationship unveils the physics that govern laminar pipe flow; pressure drop is a function of **dynamic pressure** ($\\rho U^2 / 2$), the **Reynolds number**, and the geometry's aspect ratio ($L/D$).
-%%
-%[text] ### 3. Variables that Collapse the Data
-%[text] 
+%[text] This functional relationship unveils the physics that govern laminar pipe flow; pressure drop is a function of fluid density, 
 %%
 %[text] ## Problem 2. Passive scalar transport from Reynolds Transport Theorem
 %[text] - \[A passive scalar is a scalar quantity that is transported by advection (the transfer of a substance, or matter, by bulk motion of a fluid) and diffusion in a flow but does not influence the velocity field or fluid dynamics.\] \

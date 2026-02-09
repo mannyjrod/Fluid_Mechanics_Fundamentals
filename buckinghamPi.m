@@ -79,7 +79,7 @@ function results = buckinghamPi(params, dimNames, dimMatrix)
     fprintf("Rule of thumb (fluids): pick ones that span %s and are independent.\n", strjoin(dimNames,", "));
     fprintf("Available: %s\n\n", strjoin(params, ", "));
 
-    repInput = input(sprintf("Enter %d repeating parameter names (A wise selection for fluid flow problems is a Length, a Velocity, and a Mass or Density. Ref: Table 7-3, p.284) [syntax: {'L','V','rho'}]: ", j), "s");
+    repInput = input(sprintf("Enter %d repeating parameter names (A wise selection for fluid flow problems is \n a Length, a Velocity, and a Mass or Density. Ref: Table 7-3, p.284) [syntax: {'L','V','rho'}]: ", j), "s");
     repCell  = str2cell(repInput);  %#ok<NASGU>
     % Parse the user string into a cell array safely
     try
