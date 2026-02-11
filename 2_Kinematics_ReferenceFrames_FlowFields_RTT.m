@@ -243,7 +243,7 @@ legend('Experimental data', 'Laminar theory: f = 64 / Re', ... %[output:group:0b
 %[text] <u>Discussion</u>
 %[text] The experimental data clearly shows **agreement** to the laminar theory ($f = 64/Re$). The experimental friction factor data collapse well onto the theoretical laminar prediction, indicating fully developed laminar flow and validating the nondimensionalization.
 %%
-%[text] #### 5. Inference - "Effective" Viscosity
+%[text] ### 5. Inference - "Effective" Viscosity
 %[text] For laminar flow \[1\]:
 %[text] $\\Delta P = \\frac{32 \\mu L U}{D^2}$ $\\rightarrow \\mu\_{fit} = \\frac{\\Delta P D^2} {32 L U} \\quad (1)$
 %[text] Or, equivalently, as in practice it is convenient to express the pressure loss for all types of fully developed internal flows as \[1\]:
