@@ -1,0 +1,31 @@
+%[text] # Governing Eqs: Navier-Stokes, Euler, and the Bernoulli Equations
+%[text] $\\rightarrow$Mathematical expressions of the three fundamental conservation laws that govern fluid flow: **mass, momentum, and energy**.
+%[text] - **Navier-Stokes:** Includes viscosity, complex.
+%[text] - **Euler:** No viscosity, simplified.
+%[text] - **Bernoulli:** Steady-state, energy-based, derived from Euler. \
+%[text] %[text:anchor:TMP_3624] AA 507 (Incompressible Fluid Mechanics) Winter 2026, UW
+%[text] Assignment: Homework 3
+%[text] (Ref file: HW3.pdf)
+%[text] Author: Emmanuel Rodriguez
+%[text] [emmanueljrodriguez.com](https://emmanueljrodriguez.com/)
+%[text] Date: 13FEB2026
+%[text]  \- 20FEB2026
+%[text] Location: UW && Renton, Seattle, WA
+%%
+%[text:tableOfContents]{"heading":"**Table of Contents**"}
+%%
+clear % Clears workspace
+clc % Clears command window
+close all % Closes all figures
+%%
+%[text] ## Problem 1. Draining tank with two orifices
+%[text] TIn practice, fluid flow in pipes is commonly encountered in systems. For example, the flow of liquid propellants through the network of ducts and lines found in a rocket engine.
+%[text] "In fully developed laminar flow, each fluid particle moves at a constant axial velocity along a streamline and the velocity profile *u(r)* remains unchanged in the flow direction." \[1\] See Fig. 8-11.
+imshow('Fig8-11_LaminarFlow.png')
+%[text] - \[*Newtonian fluid* - viscosity is constant; shear stress is proportional to shear rate.\] \
+
+%[appendix]{"version":"1.0"}
+%---
+%[metadata:view]
+%   data: {"layout":"onright"}
+%---
