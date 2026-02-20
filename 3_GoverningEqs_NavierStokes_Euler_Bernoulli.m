@@ -50,7 +50,8 @@ imshow('element for cons of mass.png')
 %%
 %[text] <u>Mass Balance</u>
 %[text] $\\frac{dm\_{CV}}{dt} = - (\\dot{m}\_{bottom} + \\dot{m}\_{middle})$
-%[text] $A \\frac{dh}{dt} = -a \\sqrt{2gh} - a \\sqrt{2g(h - h/2)}    \\quad \\rightarrow \\frac{dh}{dt} = -\\frac{a}{A} \\sqrt{2g} \\left( \\sqrt{h} + \\sqrt{h - H/2} \\right),     \\quad h \> H/2$
+%[text] #### Governing ODE:
+%[text] $A \\frac{dh}{dt} = -a \\sqrt{2gh} - a \\sqrt{2g(h - h/2)}    \\quad \\rightarrow \\frac{dh}{dt} = -\\frac{a}{A} \\sqrt{2g} \\left( \\sqrt{h} + \\sqrt{h - H/2} \\right),     \\quad h \> H/2$     (1-1)
 %[text] Solve the differential equation:
 %% HW3 Problem 1.1 — Symbolic solution for t* where h(t*) = H/2
 % Assumptions: ideal draining (Torricelli), quasi-steady, incompressible, R >> d
@@ -170,8 +171,75 @@ fprintf('t* = %.6f s\n', t_star_num); %[output:4a40fdf7]
 fprintf('t_end (empty) = %.6f s\n', t_end_num); %[output:19fcf9d5]
 %%
 %[text] #### 2. Derive the governing relations for the two time intervals
-%[text] Phase 1: $t \< t^\*$ (when both orifices are active)
-%[text] Phase 2: $t \> t\*$ (when only the bottom orifice is active)
+%[text] Phase 1: $t \< t^\*$ (when the water level is above both orifices; both orifices are active)
+%[text] Phase 2: $t \> t\*$ (when the water level is above the bottom orifice; only the bottom orifice is active)
+%[text] Note: It's "easier" to solve for $t(h)$ than it is for $h(t)$ explicitly, since the expression is in terms of $h$; separate variables to obtain:
+%[text] $dt = -\\frac{A}{a\\sqrt{2g}} \\frac{dh}{ \\sqrt{h} + \\sqrt{h-\\frac{H}{2}}}$        (1-2)
+%%
+%[text] <u>Phase 1</u>:
+%[text] Set conditions, or the limits of integration:
+%[text] $h(0) = H \\rightarrow$ @ t=0, the water level is at the very top of the tank, at level "H"
+%[text] $h(t) = h \\rightarrow$    @ t=t, the water level is at the bottom of the tank, at level "h"
+%% ---- Symbolic setup for the definite integral ----
+syms eta h positive real
+
+integrand = 1/( sqrt(eta) + sqrt(eta - H/2) );
+% Note: \eta becomes the temporary integration variable, since h will 
+% become the lower limit variable, this removes any unnecessary confusion.
+
+% Time as a function of height h (valid for h >= H/2)
+t_of_h_sym = (A/(a*sqrt(2*g))) * int(integrand, eta, h, H);
+
+% t* occurs at h = H/2
+t_star_sym = simplify(subs(t_of_h_sym, h, H/2), 'Steps', 200);
+
+%% ---- Display symbolic results ----
+disp('t(h) (symbolic) ='); pretty(t_of_h_sym) %[output:5c0cfe8c] %[output:52f24952]
+disp('t* (symbolic)   ='); pretty(t_star_sym) %[output:0566f87b] %[output:018b3e6f]
+%%
+clipboard('copy', latex(t_of_h_sym));
+clipboard('copy', latex(t_star_sym));
+%[text] $t(h) = -\\frac{\\sqrt{2}\\,R^2\\,\\left(\\frac{\\frac{\\sqrt{2}\\,H^{3/2}}{3}-\\frac{4\\,h\\,\\sqrt{h-\\frac{H}{2}}}{3}-\\frac{4\\,H^{3/2}}{3}+\\frac{4\\,h^{3/2}}{3}}{H}+\\frac{2\\,\\sqrt{h-\\frac{H}{2}}}{3}\\right)}{2\\,d^2\\,\\sqrt{g}},     \\quad    h \\geq H/2$    (1-3)
+%[text] $t^\*(h) = \\frac{2\\,\\sqrt{H}\\,R^2\\,\\left(\\sqrt{2}-1\\right)}{3\\,d^2\\,\\sqrt{g}} \\leftarrow$ (1-4) at this time is when the water level will reach the mid-height, and when only the bottom orifice will be active.
+%%
+%[text] <u>Phase 2</u>:
+%[text] Set conditions, or the limits of integration:
+%[text] $h(t^\*) = H/2 \\rightarrow$ @ t=t\*, the water level is at the mid-height, at level "H/2"
+%[text] $h(t) = h \\rightarrow$    @ t=t, the water level is at the bottom of the tank, at level "h"
+%% ---- Symbolic setup for the definite integral ----
+syms eta h positive real
+
+integrand = 1/( sqrt(eta) + sqrt(eta - H/2) );
+% Note: \eta becomes the temporary integration variable, since h will 
+% become the lower limit variable, this removes any unnecessary confusion.
+
+% Time as a function of height h (valid for h <= H/2)
+t_of_h_sym = (A/(a*sqrt(2*g))) * int(integrand, eta, h, H/2);
+
+
+%% ---- Display symbolic results ----
+disp('t(h) (symbolic) ='); pretty(t_of_h_sym) %[output:7157b702] %[output:36ef15a5]
+clipboard('copy', latex(t_of_h_sym));
+%%
+%[text] $t(h) = -\\frac{\\sqrt{2}\\,R^2\\,\\left(\\frac{\\sqrt{4\\,h-2\\,H}}{3}-\\frac{\\frac{\\sqrt{2}\\,H^{3/2}}{3}-\\frac{4\\,h^{3/2}}{3}+\\frac{2\\,h\\,\\sqrt{4\\,h-2\\,H}}{3}}{H}\\right)}{2\\,d^2\\,\\sqrt{g}}, \\quad    h \\leq H/2$    (1-5)
+%%
+%[text] ## Problem 2. Navier-Stokes and irrotational flow
+%[text] \[continue here... -ERODRIGUEZ2, 16FEB2026 18:35\]
+imshow('Fig1_Draining_tank.png')
+%[text] "This problem involves the conversion of flow, kinetic, and potential energies to each other without the use of components (pumps, turbines, etc.) and is thus suitable for the use of the **Bernoulli equation.**" \[1\]
+%[text] The underlying physics governing this problem set is the **conservation of mass** principle; 
+%[text] ### Fundamentals
+%[text] <u>a. Conservation of Mass Principle</u>
+%[text] $m\_{in} - m\_{out} = \\Delta\_{CV}$
+%[text] *The net mass transfer to or from a control volume during a time interval* $\\Delta t$ *is equal to the net change in the total mass within the control volume during* $\\Delta t$. \[1\]
+%[text] #### **General Conservation of Mass**
+imshow('element for cons of mass.png')
+%[text] #### Integral Conservation of Mass Statement
+%[text] $\\frac{d}{dt}\\int\_{\\text{CV}} \\rho \\, dV + \\oint\_{\\text{\\partial V}} \\rho \\, (\\vec{V} \\cdot \\vec{n})\\, dA = 0$
+%[text] "... *the time rate of change of mass within the control volume plus the net mass flow rate through the control surface is equal to zero."*
+%[text] The *continuity equation* it defines how any conserved quantity (e.g., fluids) moves continuously through space rather than disappearing and reappearing.
+%%
+%[text] ### Analysis
 %%
 %[text] ## References
 %[text] \[1\] Cengel, Y. (2018). *Fluid Mechanics: Fundamentals and Applications* (4th ed.). New York: McGraw-Hill.
@@ -204,4 +272,22 @@ fprintf('t_end (empty) = %.6f s\n', t_end_num); %[output:19fcf9d5]
 %---
 %[output:19fcf9d5]
 %   data: {"dataType":"text","outputData":{"text":"t_end (empty) = 254.650565 s\n","truncated":false}}
+%---
+%[output:5c0cfe8c]
+%   data: {"dataType":"text","outputData":{"text":"t(h) (symbolic) =\n","truncated":false}}
+%---
+%[output:52f24952]
+%   data: {"dataType":"symbolic","outputData":{"name":"","value":"-\\frac{\\sqrt{2}\\,R^2 \\,{\\left(\\frac{\\frac{\\sqrt{2}\\,H^{3\/2} }{3}-\\frac{4\\,h\\,\\sqrt{h-\\frac{H}{2}}}{3}-\\frac{4\\,H^{3\/2} }{3}+\\frac{4\\,h^{3\/2} }{3}}{H}+\\frac{2\\,\\sqrt{h-\\frac{H}{2}}}{3}\\right)}}{2\\,d^2 \\,\\sqrt{g}}"}}
+%---
+%[output:0566f87b]
+%   data: {"dataType":"text","outputData":{"text":"t* (symbolic)   =\n","truncated":false}}
+%---
+%[output:018b3e6f]
+%   data: {"dataType":"symbolic","outputData":{"name":"","value":"\\frac{2\\,\\sqrt{H}\\,R^2 \\,{\\left(\\sqrt{2}-1\\right)}}{3\\,d^2 \\,\\sqrt{g}}"}}
+%---
+%[output:7157b702]
+%   data: {"dataType":"text","outputData":{"text":"t(h) (symbolic) =\n","truncated":false}}
+%---
+%[output:36ef15a5]
+%   data: {"dataType":"symbolic","outputData":{"name":"","value":"-\\frac{\\sqrt{2}\\,R^2 \\,{\\left(\\frac{\\sqrt{4\\,h-2\\,H}}{3}-\\frac{\\frac{\\sqrt{2}\\,H^{3\/2} }{3}-\\frac{4\\,h^{3\/2} }{3}+\\frac{2\\,h\\,\\sqrt{4\\,h-2\\,H}}{3}}{H}\\right)}}{2\\,d^2 \\,\\sqrt{g}}"}}
 %---
