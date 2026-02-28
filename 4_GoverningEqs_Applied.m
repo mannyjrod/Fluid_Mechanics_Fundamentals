@@ -1,0 +1,75 @@
+%[text] # Governing Eqs - Applied: Boussinesq, Incompressibility and the Speed of Sound, Biot-Savart Law, Rankine Vortex
+%[text] $\\rightarrow$Mathematical expressions of the three fundamental conservation laws that govern fluid flow: **mass, momentum, and energy**.
+%[text] - **Navier-Stokes:** Includes viscosity, complex.
+%[text] - **Euler:** No viscosity, simplified.
+%[text] - **Bernoulli:** Steady-state, energy-based, derived from Euler. \
+%[text] %[text:anchor:TMP_3624] AA 507 (Incompressible Fluid Mechanics) Winter 2026, UW
+%[text] Assignment: Homework 4
+%[text] (Ref file: HW4.pdf)
+%[text] Author: Emmanuel Rodriguez
+%[text] [emmanueljrodriguez.com](https://emmanueljrodriguez.com/)
+%[text] Date: 25FEB2026
+%[text]  \- 4MAR2026
+%[text] Location: UW && Renton, Seattle, WA
+%%
+%[text:tableOfContents]{"heading":"Table of Contents"}
+%%
+clear % Clears workspace
+clc % Clears command window
+close all % Closes all figures
+%%
+%[text] ## Problem 2. Pressure, density, incompressiblity, and the speed of sound
+
+%[text] Derive an evolution equation for the pressure in a fluid starting from the **mass conservation equation**:
+%[text] $\\frac{\\partial \\rho}{\\partial t} + \\nabla \\cdot (\\rho \\vec{v}) = 0$        (2-1)
+%%
+%[text] ### Analysis
+%[text] #### 1. Expand the divergence term and use the definition of the speed of sound c in a fluid
+%[text] 
+%[text] $c^2 = \\left( \\frac{\\partial p}{\\partial \\rho} \\right)\_s$        (2-2)
+%[text] - The subscript $s$ indicates constant entropy, or an isentropic fluid system ("no **heat** is transferred to/from the system to the surroundings"). \
+%[text] $\\nabla \\cdot (\\rho \\vec{u}) = \\rho (\\nabla \\cdot \\vec{u}) + \\vec{u} \\cdot (\\nabla \\rho)$        (2-3)
+%%
+%[text] *First principles:* Density is a function of <u>pressure</u> and <u>temperature</u> (and **entropy** change is dependent on temperature difference).
+%[text] $\\rightarrow \\rho = \\rho(p,T) \\qquad \\rightarrow \\rho = \\rho(p,s)$        (2-4)
+%[text] The **full differential** of (2-4):
+%[text] $d \\rho = \\left( \\frac{\\partial \\rho}{\\partial p} \\right)\_s dp + \\left( \\frac{\\partial \\rho}{\\partial s} \\right)\_p ds$        (2-5)
+%[text] Assuming constant entropy: $ds = 0 \\rightarrow d \\rho = \\left( \\frac{\\partial \\rho}{\\partial p} \\right)\_s dp$        (2-6)
+%[text] and *inverting* (2-2) and plugging into (2-6):
+%[text] $d \\rho = \\frac{1}{c^2} dp \\qquad \\rightarrow \\qquad \\nabla \\rho = \\frac{1}{c^2} \\nabla p$        (2-7)
+%[text] **Physical interpretation:** Density changes is proportional to pressure changes through the speed of sound (squared), $c^2$.
+%%
+%[text] #### 2. Convert this into a relation between material derivatives.
+%[text] Applying the chain rule:
+%[text] $\\frac{d \\rho}{d t} = \\frac{d \\rho}{d p} \\cdot \\frac{d p}{d t} \\qquad \\rightarrow \\qquad  \\frac{D \\rho}{D t} = \\frac{d \\rho}{d p} \\cdot \\frac{D p}{D t} \\qquad \\rightarrow \\qquad \\frac{D \\rho}{D t} = \\frac{1}{c^2} \\cdot \\frac{D p}{D t}$        (2-8)
+%[text] "What does the **isentropic assumption** tell us?"
+%[text] The thermodynamic relation is isentropic, so density changes relate to pressure changes through $c^2$, and we can use apply that relationship along the particle path.
+%%
+%[text] #### 3. For incompressible flow, what does mass conservation tell us about the dynamics of $p$?
+%[text] <u>Compressibility & The Speed of Sound</u>
+%[text] Since $\\left( \\frac{\\partial \\rho}{\\partial p} \\right)\_s = \\frac{1}{c^2}$, this is a **measure of compressibility**, which indicates how much density changes when pressure changes.
+%[text] In incompressible flow, $\\frac{\\partial \\rho}{\\partial p} = 0$
+%[text] then, $\\frac{1}{c^2} = 0 \\qquad \\leftarrow \\qquad$only possible as $c \\rightarrow \\infty$
+%[text] From (2-1) and (2-3):
+%[text] $\\frac{\\partial \\rho}{\\partial t} + \\vec{u} \\cdot \\nabla \\rho + \\rho \\nabla \\cdot \\vec{u} = 0 \\qquad \\rightarrow \\qquad \\frac{D \\rho}{D t} + \\rho \\nabla \\cdot \\vec{u} = 0$        (2-9)
+%[text] Plug (2-8) into (2-9):
+%[text] $\\frac{D p}{D t} = -c^2 \\rho \\nabla \\cdot \\vec{u}$        (2-10)
+%[text] and for incompressible flow: $\\nabla \\cdot \\vec{u} = 0$
+%[text] (2-10) then becomes $\\rightarrow \\frac{D p}{D t} = 0$        (2-11)
+%%
+%[text] **Physical interpretation:**
+%[text] Noting the following fundamental principles --
+%[text] Continuity Equation governs mass conservation $\\rightarrow$ gives **velocity scaling**.
+%[text] Momentum (Navier-Stokes) Equation governs force balance $\\rightarrow$ gives **pressure field.**
+%[text] **Mass conservation, with the incompressible flow assumption, does** <u>**not**</u> **determine** $p$.
+%[text] In incompressible flow, continuity becomes a **constraint on the velocity field**, and pressure is a parameter that **enforces** that constraint through the momentum equation. So $p$ is set by dynamics/momentum + boundary conditions, not by continuity alone. \[1\]
+%%
+%[text] ## References
+%[text] \[1\] Cengel, Y. (2018). *Fluid Mechanics: Fundamentals and Applications* (4th ed.). New York: McGraw-Hill.
+%[text] \[2\] Kreyszig, E. (1999). *Advanced Engineering Mathematics* (8th ed.). New York: John Wiley & Sons.
+
+%[appendix]{"version":"1.0"}
+%---
+%[metadata:view]
+%   data: {"layout":"onright"}
+%---
