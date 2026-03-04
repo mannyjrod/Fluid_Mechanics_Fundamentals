@@ -105,6 +105,7 @@ pretty(R_sym) %[output:317cb118]
 %%
 %[text] #### 2. Estimating the thermal equilibrium time scale
 %[text] 
+%[text] \*\*\*\[CONTINUE HERE... ERODRIGUEZ, TUES 3MAR2026 17:02\]\*\*
 %%
 %[text] ## Problem 2. Pressure, Density, Incompressiblity, and the Speed of Sound
 
