@@ -26,6 +26,10 @@ imshow("Boussinesq_approx.png") %[output:8123be67]
 %[text] <u>Problem statement</u>: 
 %[text] In the problem given, a **lava lamp** scaling model is given:
 imshow('lava_lamp_scaling_model.png') %[output:3683dbf9]
+%[text] <u>Big Idea</u>:
+%[text] The Boussinesq approximation simplifies **buoyancy-driven flow equations** by treating fluid density as constant (incompressible) everywhere except in the gravity-driven buoyancy term.
+%[text] <u>Applications</u>:
+%[text] The assumption of 
 %[text] <u>Key Assumptions</u>
 %[text] - Small density variation -- change in density $\\Delta \\rho$ is very small compared to the reference density $\\rho\_0$.
 %[text] - Incompressible continuity -- density changes are small, the fluid is treated as incompressible.
@@ -45,7 +49,8 @@ imshow('lava_lamp_scaling_model.png') %[output:3683dbf9]
 %[text] - identically equal to means the equality **holds for all values** of the variables, not just specific cases.\] \
 %%
 %[text] ### Analysis
-%[text] 1\. Estimating the wax blob radius R
+%[text] #### 1. Estimating the wax blob radius R
+%[text] 
 %[text] The bouyant force is given \[1\]: $F\_B = \\rho\_f gV$
 %[text] The bouyant force **scale** of the wax blob, then becomes:
 %[text] $F\_b \\sim \\Delta \\rho gV$
@@ -95,6 +100,10 @@ title('Blob radius scaling:  R = \surd(\sigma / (\rho_{w,c}\beta\Delta T g))'); 
 disp("Symbolic formula for R(sigma):"); %[output:32647326]
 pretty(R_sym) %[output:317cb118]
 %%
+%[text] <u>Physical Interpretation</u>
+%[text] As the radius of the wax blob increases, so does the surface tension, which makes for a more **stable blob**.
+%%
+%[text] #### 2. Estimating the thermal equilibrium time scale
 %[text] 
 %%
 %[text] ## Problem 2. Pressure, Density, Incompressiblity, and the Speed of Sound

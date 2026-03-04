@@ -26,6 +26,10 @@ imshow("Boussinesq_approx.png") %[output:8123be67]
 %[text] <u>Problem statement</u>: 
 %[text] In the problem given, a **lava lamp** scaling model is given:
 imshow('lava_lamp_scaling_model.png') %[output:3683dbf9]
+%[text] <u>Big Idea</u>:
+%[text] The Boussinesq approximation simplifies **buoyancy-driven flow equations** by treating fluid density as constant (incompressible) everywhere except in the gravity-driven buoyancy term.
+%[text] <u>Applications</u>:
+%[text] The assumption of small temperature/composition variations, and treating density changes as linear with temperature, makes it ideal for modeling natural convection, atmospheric, and ocean flows.
 %[text] <u>Key Assumptions</u>
 %[text] - Small density variation -- change in density $\\Delta \\rho$ is very small compared to the reference density $\\rho\_0$.
 %[text] - Incompressible continuity -- density changes are small, the fluid is treated as incompressible.
