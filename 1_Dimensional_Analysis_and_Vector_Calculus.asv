@@ -259,10 +259,7 @@ imshow('divergence_interp.png'); %[output:81ec5113]
 %[text] $\\nabla \\cdot \\mathbf{u} = 0$
 %[text] the velocity field is **incompressible.**
 %%
-% vorticity section neeeeeeedddedd...
 
-% -ERODRIGUEZ, 6MAR2026 21:09
-%%
 %% Figure 2: Streamlines (rotation about +z)
 fig = figure('Color','w'); %[output:70bd2e6c]
 fig.Theme = "light"; %[output:70bd2e6c]
@@ -341,13 +338,21 @@ legend("r_0=0.5R","r_0=R","r_0=1.5R","Location","best"); %[output:9d15e818]
 %[text] we obtain
 %[text] $\\vec{u} \\cdot d\\ell = \\Omega R^2\\, d\\theta$
 %[text] 
-%[text] 3\.4    Evaluate the Definite Integral
+%[text] 3\.4    Evaluate the Integral
 %[text] 
-%[text] $\\Gamma = \\int\_0^{2\\pi} \\Omega R^2\\, d\\theta = \\Omega R^2 (2\\pi)$
+%[text] \\$
+%[text] \\Gamma
+%[text] =
+%[text] \\int\_0^{2\\pi} \\Omega R^2\\, d\\theta
+%[text] =
+%[text] \\Omega R^2 (2\\pi).
+%[text] \\$\\$
 %[text] 
-%[text] **Final Result**
-%[text] $\\Gamma = 2\\pi \\Omega R^2$
-%[text] - This is the circulation, or the **vortex strength** (a positive, +, value represents a counterclock-wise vortex). \
+%[text] \\textbf{Final Result}
+%[text] 
+%[text] \\$\\$
+%[text] \\boxed{\\Gamma = 2\\pi \\Omega R^2}
+%[text] \\$\\$
 %%
 %[text] ## References
 %[text] \[1\] [https://en.wikipedia.org/wiki/Stokes\_problem](https://en.wikipedia.org/wiki/Stokes_problem)
