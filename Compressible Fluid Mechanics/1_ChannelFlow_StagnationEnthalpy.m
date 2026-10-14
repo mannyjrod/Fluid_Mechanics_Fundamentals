@@ -1,7 +1,6 @@
 %[text] # Channel Flow of a Compressible Fluid & Stagnation Enthalpy
 %[text] AA 504 (Compressible Fluid Mechanics) Autumn 2026, UW
 %[text] Assignment: Homework \#1
-%[text] (Ref file: HW5.pdf)
 %[text] Author: Emmanuel Rodriguez
 %[text] [emmanueljrodriguez.com](https://emmanueljrodriguez.com/)
 %[text] Date: 14OCT2026
@@ -125,14 +124,18 @@ fprintf('Choked case: inlet V = %.1f, exit V = %.1f m/s\n',... %[text:anchor:TMP
 % Optional export: %[text:anchor:TMP_805d]
 % exportgraphics(fig,'Nozzle_Area_Mach.png','Resolution',300); %[text:anchor:TMP_805d]
 %%
-%[text] \[add some blurbs on the chart here...\]
+%[text] The first chart, 'Mach number along a converging-diverging nozzle', shows two curves - a choked: subsonic to supersonic Mach number, reaching M=1 at the throat, then continuing to increase. The second curve, is entirely subsonic, past the throat (with increasing area) the Mach number shows a gradual decrease as expected in a "subsonic world."
 %%
 %[text] ## Problem 2-B. Supersonic Flow
 %[text] ### Problem Statement
 %[text] List every indication of supersonic flow described in the movie.
 %%
 %[text] ### Statement
-%[text] \[continue here...\]
+%[text] Appearance of shock waves in the channel means that the flow is locally supersonic.
+%[text] In a one-dimensional approximation, the intersection of theoretical pressure curves for the channel marks the conditions for which air accelerating from rest should reach sonic speed.
+%[text] When the researcher introduced artificial roughness, or tape to simulate roughness, Mach waves originate at the edges of the tape, which are evidence of supersonic flow in the diverging part of the channel.
+%[text] Pressure distribution is also an indicator of supersonic flow, in the diverging channel, at first the pressure is decreasing, and hence the velocity increases. However, after the shock wave, the pressure increases, and the velocity decreases, showing subsonic flow. The supersonic region ends at the shock wave \[1\]. 
+%[text] 
 %%
 %[text] ## Problem 3. Stagnation Enthalpy
 %[text] ### Problem Statement
