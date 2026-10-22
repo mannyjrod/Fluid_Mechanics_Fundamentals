@@ -75,12 +75,59 @@ close all % Closes all figures
 %[text] $p\_1$ is the static pressure in the empty test section of the tunnel.
 %[text] $\\rightarrow \\textbf{p\_1 = 0.1317 atm}$
 %%
-%[text] ## Problem 3. \[pending...\]
+%[text] ## Problem 3. Density Ratio Across a Shock Wave
 %[text] ### Problem Statement
-%[text] 
+%[text] Determine the density ratio across a shock wave in the limit of infinite strength.
 %%
 %[text] ### Analysis
-%[text] 
+%[text] Using the density ratio relation (2.47) \[3\] will give the compression of the gas to its upstream value.
+%[text] $\\\[ \\frac{\\rho\_2}{\\rho\_1} =\\frac{(\\gamma+1)M\_1^2}{2+(\\gamma-1)M\_1^2} \\\]$    (2.47)
+%[text] An infinitely strong normal shock corresponds to $M\_1 \\rightarrow \\infty$;
+%[text] - Apply some analytical tactics to delete two $M\_1$ variables from the density ratio relation: \
+%[text] Take the infinite strength limit:
+%[text] \-divide the numerator and denominator by $M\_1^2$:
+%[text] $\\\[ =\\frac{(\\gamma+1)}{ \\frac{2}{M\_1^2} +(\\gamma-1)} \\\]$
+%[text] As $M\_1 \\rightarrow \\infty$, $\\frac{2}{M\_1^2} \\rightarrow 0$, giving:
+%[text] $\\\[ \\lim\_{M\_1\\to\\infty}\\frac{\\rho\_2}{\\rho\_1} =\\frac{\\gamma+1}{\\gamma-1}} \\\]$
+%[text] For air: $\\gamma = 1.4$
+%[text] $\\\[ \\frac{\\rho\_2}{\\rho\_1}\\longrightarrow \\frac{2.4}{0.4}= \\textbf{6} \\\]$
+%[text] - **A shock wave with infinite strength compresses the gas to six-times its upstream value. Note: This only applies to the constant-**$\\gamma$ **ideal gas model.**
+%[text] - Real air at sufficiently high-temperatures changes its molecular behavior, so six is not a universal physical limit. \
+%%
+%[text] ## **Problem 4. Rarefied Gas Dynamics** 
+%[text] ### Problem Statement
+%[text] Based off of the movie "Rarefied Gas Dynamics" \[1\], write one paragraph on the most surprising aspect of the movie to you.
+
+%%
+%[text] ### Statement
+%[text] The central message the movie presents is that gas behaves differently depending on how far its molecules travel between collisions compared with the size of the object or flow being studied. This determines whether familiar continuum concepts apply to these types of gases.
+%[text] Some key concepts include:
+%[text] **1. Mean free path measures the distance between molecular collisions.**
+%[text] The mean free path, \\(\\lambda\\), is the average distance a molecule travels between collisions with other gas molecules.
+%[text] As gas density decreases, collisions become less frequent and the mean free path increases. Consequently, a gas at high altitude or inside a vacuum chamber can behave very differently from air at sea level.
+%[text] **2. The Knudsen number determines the importance of rarefaction.**
+%[text] The relevant quantity is the mean free path relative to a characteristic length, $\\(L\\):\\\[ \\mathrm{Kn}=\\frac{\\lambda}{L} \\\]$
+%[text:table]
+%[text] | **Regime** | **Relative length scales** | **Behavior demonstrated** |
+%[text] | --- | --- | --- |
+%[text] | Continuum flow | $\\(\\lambda\\ll L\\)$ | Frequent molecular collisions produce familiar flow structures, including well-defined shocks. |
+%[text] | Transitional flow | $\\(\\lambda\\) is comparable to \\(L\\)$ | Collisions matter, but continuum descriptions become less reliable. Shocks become diffuse. |
+%[text] | Free-molecular flow | $\\(\\lambda\\gg L\\)$ | Molecules largely follow independent trajectories; collisions with solid surfaces dominate their interaction with a body. |
+%[text:table]
+%[text] **The choice of** $\\(L\\)$ **matters.** In the presentation, a tiny wire experiences free-molecular flow while a much larger model in the same stream experiences approximately continuum flow.
+%[text] **3. Shock waves have a finite physical thickness.**
+%[text] As collisions become more frequent, incoming molecules interact strongly with molecules scattered back from the model. A compressed region and a recognizable bow shock develop.
+%[text] The experiments show that shock thickness is approximately proportional to the upstream mean free path: $\\\[ \\delta\\propto\\lambda \\\]$
+%[text] At lower pressure, the mean free path increases and the shock becomes thicker. When its thickness is very small compared with the body, treating the shock as a discontinuity is a useful approximation.
+%[text] This connects directly to our work on shocks ahead of wind tunnel models: **the thin shock used in conservation-law calculations represents a physical region where molecular collisions redistribute momentum and energy.**
+%%
+%[text] Some applications of these principles:
+%[text:table]{"columnWidths":[115,-1]}
+%[text] | **Application** | **Why the presentation matters** |
+%[text] | --- | --- |
+%[text] | <p>**High-altitude** </p><p>**aerodynamics**</p> | Surface scattering and accommodation influence aerodynamic forces and heat transfer when intermolecular collisions are infrequent. |
+%[text] | <p>**Wind tunnel** </p><p>**testing**</p> | Matching Mach number alone does not establish comparable rarefaction conditions; the relevant Knudsen number also matters. |
+%[text:table]
 %%
 %[text] ## References
 %[text] \[1\] YouTube '[17. Rarefied Gas Dynamics](https://www.youtube.com/watch?v=T46Wb2d_dV8)'.
