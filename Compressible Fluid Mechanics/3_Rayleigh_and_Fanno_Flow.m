@@ -13,14 +13,13 @@ clear % Clears workspace
 clc % Clears command window
 close all % Closes all figures
 %%
-%[text] ## Problem 1. \[Video -- pending\]
+%[text] ## Problem 1. Waves in Fluids
 %[text] ### Problem Statement
 %[text] Based off of the movie "Waves in Fluids" \[1\], write one paragraph on the most surprising aspect of the movie.
-
 %%
 %[text] ### Statement
-%[text] ## Continue here... -ERODRIGUEZ2, 27OCT2026 8:32
-%[text] \[pending...\]
+%[text] Waves in fluids are traveling disturbances that transfer energy and momentum through a fluid, even though the fluid particles themselves may move only a short distance as the wave passes. One surprising feature is that a water wave, driven by gravity, and a sound wave which even though is driven by a different mechanism - gas compressibility, still follow many of the same principles. 
+%[text] What makes wave motion surprising is that the disturbance can travel far faster and farther than the individual fluid particles it passes through. The video also shows that waves can change shape as they travel: compression waves tend to steepen, while expansion waves spread out. In water, a steep wave may break into a turbulent surge; in a gas, a steep compression can form a remarkably thin shock wave.
 %%
 %[text] ## Problem 2. Rayleigh Flow
 %[text] ### Problem Statement
@@ -106,7 +105,7 @@ close all % Closes all figures
 %[text] $\\rightarrow$ Friction reduces the total pressure, while the total temperature stays constant because no energy enters or leaves the flow as heat or work.
 %%
 %[text] ## References
-%[text] \[1\] YouTube '[17. Rarefied Gas Dynamics](https://www.youtube.com/watch?v=T46Wb2d_dV8)'.
+%[text] \[1\] YouTube '[14. Waves in Fluids](https://www.youtube.com/watch?v=MNyebpog_i0)'.
 %[text] \[2\] Cengel, Y. (2018). *Fluid Mechanics: Fundamentals and Applications* (4th ed.). New York: McGraw-Hill.
 %[text] \[3\] Liepmann, H. W., & Roshko, A. (2001). *Elements of gasdynamics*. Dover Publications. (Original work published 1957)
 
