@@ -15,26 +15,12 @@ close all % Closes all figures
 %%
 %[text] ## Problem 1. \[Video -- pending\]
 %[text] ### Problem Statement
-%[text] Determine the stagnation pressure on a wind tunnel model in a “blow down” supersonic tunnel.  The test section Mach number is 4 and the stagnation pressure upstream of the choked throat is 20 atm.   The stagnation temperature is 300K.
+%[text] Based off of the movie "Waves in Fluids" \[1\], write one paragraph on the most surprising aspect of the movie.
 
 %%
-%[text] ### Analysis
-%[text] The normal-shock relations for a perfect gas are used:
-%[text] $\\\[ M\_2^2= \\frac{1+\\frac{\\gamma-1}{2}M\_1^2} {\\gamma M\_1^2-\\frac{\\gamma-1}{2}}, \\\]$    (2.45) \[3\]
-%[text] and
-%[text] $\\\[ \\frac{p\_2}{p\_1} =1+\\frac{2\\gamma}{\\gamma+1}(M\_1^2-1) \\\]$     (2.48a) \[3\]
-%[text] from the analysis performed in Problem 2, we have $p\_1 = 0.1317 atm$ the static pressure ahead of the shock
-%[text] $\\rightarrow \\textbf{p\_2 = 18.5(0.1317\~atm)} = 2.4365\~atm$
-%%
-%[text] Using (2.45) to solve for the Mach speed immediately following the shock:
-%[text] $\\rightarrow \\textbf{M\_2 = 0.4350}$
-%%
-%[text] Now we bring the post-shock air to rest on the model:
-%[text] - Since we're assuming isentropic flow - the flow is adiabatic and in (local thermodynamic) equilibrium, we use (2.31) to find the stagnation pressure on the model. \
-%[text] $\\\[ \\frac{p\_{02}}{p\_2} = \\left(1+\\frac{\\gamma-1}{2}M\_1^2\\right)^{\\gamma/(\\gamma-1)} \\\] = 1.1388$
-%[text] $\\rightarrow \\textbf{p\_{02} = 1.1388(2.4365\~atm) = 2.775\~atm}$
-%[text] - Only ~13.9% (2.775/20) of the reservoir stagnation pressure remains after the shock. \
-%[text] Note: Stagnation temperature tracks total energy, while stagnation pressure depends on both energy and entropy. -- A shock conserves total energy but generates entropy, which is why the two behave differently.
+%[text] ### Statement
+%[text] ## Continue here... -ERODRIGUEZ2, 27OCT2026 8:32
+%[text] \[pending...\]
 %%
 %[text] ## Problem 2. Rayleigh Flow
 %[text] ### Problem Statement
@@ -44,8 +30,12 @@ close all % Closes all figures
 %[text] <u>Assumptions</u>:
 %[text] - No friction (Rayleigh flow)
 %[text] - Inlet static standard atmospheric conditions:
-%[text]     - $P\_{t1} = 1\~atm = 101.325\~kPa$
-%[text]     - $T\_{t1} = 300\~K$ \
+%[text]     - $P\_{1} = 1\~atm = 101.325\~kPa$
+%[text]     - $T\_{1} = 300\~K$
+%[text] - Inlet *stagnation* conditions:
+%[text]     - At $M\_1 = 0.4$:
+%[text]     - $T\_{t1} = T\_1 \\left( 1 + \\frac{\\gamma - 1}{2} M\_1^2 \\right) = 309.6\~K$
+%[text]     - $\\\[ p\_{t1} = p\_1 \\left(1+\\frac{\\gamma-1}{2}M\_1^2\\right)^{\\gamma/(\\gamma-1)} \\\] = 113.1\~kPa$ \
 %%
 %[text] Begin with first principles; **conservation of energy.**
 %[text] **Heat added + Work done = change in Energy**
@@ -61,87 +51,59 @@ close all % Closes all figures
 %%
 %[text] From the energy equation for a perfect gas, for adiabatic flow, we obtain the following temperature ratio - Mach \# relation:
 %[text] $\\frac{T\_{t1}}{T\_1} = 1 + \\frac{\\gamma - 1}{2} M^2 \\quad (2.30)$    \[3\]
-%[text] - @ Mach = 0.4: $\\frac{T\_{t1}}{T\_1} = 1.032$ \
-%[text] (continue here... -ERODRIGUEZ2, 26OCT2026 20:40)
+%[text] - At Mach = 0.4: $\\frac{T\_{t1}}{T\_1} = 1.032$ \
+%[text] $\\frac{q^\*}{h\_1} = \\frac{q^\*}{c\_p T\_{t1}} \\frac{T\_{t1}}{T\_1} = (0.92)(1.032) = 0.95$
+%[text] Air: $c\_p = 7/29\~\\frac{cal}{g \\cdot K}$
 %%
-%[text] #### Specific Heat Relation
-%[text] For a thermally perfect gas (satisfies the ideal gas law: $p = \\rho R T$) and if it is also calorically perfect, $c\_p = const.$, then $h = c\_p T$. \[3\]
+%[text] #### Heat to Thermally Choke the Flow
+%[text] $q^\* = h\_{1} \\frac{q^\*}{c\_p T\_{t1}} \\frac{T\_{t1}}{T\_1} = c\_p T\_{1} \\frac{q^\*}{c\_p T\_{t1}} \\frac{T\_{t1}}{T\_1}$
+%[text] - Note: $h\_1$ is the *static* enthalpy at the inlet. \
+%[text] At $T\_{1} = 300\~K\~(static\~inlet\~temperature) \\rightarrow \\textbf{q\* = 68.74 cal/g}$
+%[text] $\\rightarrow$ This is the amount of heat, in thermochemical calories per gram, needed to thermally choke the flow.
 %%
-%[text] #### Stagnation Properties
-%[text] The velocity of the flow is essentially zero at the reservoir, we have:
-%[text] $h\_0 = h\_{stagnation} = c\_p T\_0 = c\_p T\_1 + \\frac{u\_1^2}{2}$
-%[text] - $T\_1 = T\_{static}$; the static temperature. \
+%[text] #### Exit Total Pressure
+%[text] From the Rayleigh flow chart: 
+%[text] - $\\frac{p\_{t1}} {p^\*} \\cong 1.16$ \
+%[text] $p\_{t2} = p\_t^\* = \\frac{113.1 kPa} {1.16} = \\textbf{ 97.5\~kPa }$
+%[text] $\\rightarrow$ This is the pressure at the choke point.
+%[text] Pressure drop from the inlet stagnation pressure:
+%[text] $\\% \\frac{\\Delta p\_t}{p\_{t1}} = \\frac{97.5 - 113.1}{113.1} 100\~\\% = -13.79\~\\%$
+%[text] $\\rightarrow$ The pressure drop is 13.79% from the inlet stagnation pressure.
 %%
-%[text] #### Perfect Gas Isentropic Relations
-%[text] Speed of sound: $a^2 = \\gamma R T$
-%[text] Mach number: $M = \\frac{u}{a} \\quad \\rightarrow u = Ma = M \\sqrt{\\gamma R T}$
-%[text] Specific gas constant: $R = c\_p - c\_v$
-%[text] Heat capacity ratio: $\\gamma = \\frac{c\_p}{c\_v}$
-%[text] - $c\_p = \\frac{\\gamma R}{\\gamma - 1}$ \
-%[text] These isentropic relation (and a whole bunch of algebra!) gives:
-%[text] $\\frac{T\_0}{T} = 1 + \\frac{\\gamma - 1}{2} M^2 \\quad (2.30)$    \[3\]
-%[text] At $T\_0 = 300 K$:
-%[text] $\\textbf{ T = T\_{static} = 71.43 K}$
-%[text] The nozzle converts enthalpy into kinetic energy, which lowers the static temperature.
-%%
-%[text] Similarly, from the isentropic relations, we know:
-%[text] $\\\[ \\frac{p\_{01}}{p\_1} = \\left(1+\\frac{\\gamma-1}{2}M\_1^2\\right)^{\\gamma/(\\gamma-1)} \\\]$    (2.31) \[3\]
-%[text] $p\_1$ is the static pressure in the empty test section of the tunnel.
-%[text] $\\rightarrow \\textbf{p\_1 = 0.1317 atm}$
-%%
-%[text] ## Problem 3. Density Ratio Across a Shock Wave
+%[text] ## Problem 3. Fanno Flow
 %[text] ### Problem Statement
-%[text] Determine the density ratio across a shock wave in the limit of infinite strength.
+%[text] Steady flow of air enters a tube of diameter D at an initial Mach number of 0.4.  Assume an adiabatic wall.  Determine the length for frictional choking, the exit total pressure, and the exit total temperature.  The skin friction coefficient is 0.005.
 %%
 %[text] ### Analysis
-%[text] Using the density ratio relation (2.47) \[3\] will give the compression of the gas to its upstream value.
-%[text] $\\\[ \\frac{\\rho\_2}{\\rho\_1} =\\frac{(\\gamma+1)M\_1^2}{2+(\\gamma-1)M\_1^2} \\\]$    (2.47)
-%[text] An infinitely strong normal shock corresponds to $M\_1 \\rightarrow \\infty$;
-%[text] - Apply some analytical tactics to delete two $M\_1$ variables from the density ratio relation: \
-%[text] Take the infinite strength limit:
-%[text] \-divide the numerator and denominator by $M\_1^2$:
-%[text] $\\\[ =\\frac{(\\gamma+1)}{ \\frac{2}{M\_1^2} +(\\gamma-1)} \\\]$
-%[text] As $M\_1 \\rightarrow \\infty$, $\\frac{2}{M\_1^2} \\rightarrow 0$, giving:
-%[text] $\\\[ \\lim\_{M\_1\\to\\infty}\\frac{\\rho\_2}{\\rho\_1} =\\frac{\\gamma+1}{\\gamma-1}} \\\]$
-%[text] For air: $\\gamma = 1.4$
-%[text] $\\\[ \\frac{\\rho\_2}{\\rho\_1}\\longrightarrow \\frac{2.4}{0.4}= \\textbf{6} \\\]$
-%[text] - **A shock wave with infinite strength compresses the gas to six-times its upstream value. Note: This only applies to the constant-**$\\gamma$ **ideal gas model.**
-%[text] - Real air at sufficiently high-temperatures changes its molecular behavior, so six is not a universal physical limit. \
+%[text] <u>Assumptions</u>:
+%[text] - Adiabatic wall, $q = 0$
+%[text] - Skin friction coefficient, $c\_f = 0.005$
+%[text] - Inlet static standard atmospheric conditions:
+%[text]     - $P\_{1} = 1\~atm = 101.325\~kPa$
+%[text]     - $T\_{1} = 300\~K$
+%[text] - Inlet *stagnation* conditions:
+%[text]     - At $M\_1 = 0.4$:
+%[text]     - $T\_{t1} = T\_1 \\left( 1 + \\frac{\\gamma - 1}{2} M\_1^2 \\right) = 309.6\~K$
+%[text]     - $\\\[ p\_{t1} = p\_1 \\left(1+\\frac{\\gamma-1}{2}M\_1^2\\right)^{\\gamma/(\\gamma-1)} \\\] = 113.1\~kPa$ \
 %%
-%[text] ## **Problem 4. Rarefied Gas Dynamics** 
-%[text] ### Problem Statement
-%[text] Based off of the movie "Rarefied Gas Dynamics" \[1\], write one paragraph on the most surprising aspect of the movie to you.
-
+%[text] From the Fanno Flow chart at $M\_1 = 0.4$:
+%[text] - $\\frac{4C\_fL^\*}{D} \\cong 2.2$
+%[text] - $\\frac{p\_{t1}}{p\_t^\*} \\cong 1.58$
+%[text] - $\\frac{\\rho}{\\rho\*} \\cong 2.62$ \
 %%
-%[text] ### Statement
-%[text] The central message the movie presents is that gas behaves differently depending on how far its molecules travel between collisions compared with the size of the object or flow being studied. This determines whether familiar continuum concepts apply to these types of gases.
-%[text] Some key concepts include:
-%[text] **1. Mean free path measures the distance between molecular collisions.**
-%[text] The mean free path, \\(\\lambda\\), is the average distance a molecule travels between collisions with other gas molecules.
-%[text] As gas density decreases, collisions become less frequent and the mean free path increases. Consequently, a gas at high altitude or inside a vacuum chamber can behave very differently from air at sea level.
-%[text] **2. The Knudsen number determines the importance of rarefaction.**
-%[text] The relevant quantity is the mean free path relative to a characteristic length, $\\(L\\):\\\[ \\mathrm{Kn}=\\frac{\\lambda}{L} \\\]$
-%[text:table]
-%[text] | **Regime** | **Relative length scales** | **Behavior demonstrated** |
-%[text] | --- | --- | --- |
-%[text] | Continuum flow | $\\(\\lambda\\ll L\\)$ | Frequent molecular collisions produce familiar flow structures, including well-defined shocks. |
-%[text] | Transitional flow | $\\(\\lambda\\) is comparable to \\(L\\)$ | Collisions matter, but continuum descriptions become less reliable. Shocks become diffuse. |
-%[text] | Free-molecular flow | $\\(\\lambda\\gg L\\)$ | Molecules largely follow independent trajectories; collisions with solid surfaces dominate their interaction with a body. |
-%[text:table]
-%[text] **The choice of** $\\(L\\)$ **matters.** In the presentation, a tiny wire experiences free-molecular flow while a much larger model in the same stream experiences approximately continuum flow.
-%[text] **3. Shock waves have a finite physical thickness.**
-%[text] As collisions become more frequent, incoming molecules interact strongly with molecules scattered back from the model. A compressed region and a recognizable bow shock develop.
-%[text] The experiments show that shock thickness is approximately proportional to the upstream mean free path: $\\\[ \\delta\\propto\\lambda \\\]$
-%[text] At lower pressure, the mean free path increases and the shock becomes thicker. When its thickness is very small compared with the body, treating the shock as a discontinuity is a useful approximation.
-%[text] This connects directly to our work on shocks ahead of wind tunnel models: **the thin shock used in conservation-law calculations represents a physical region where molecular collisions redistribute momentum and energy.**
+%[text] #### Length for Frictional Chocking
+%[text] $L^\* = \\frac{2.2 D}{4 c\_f} \\approx 110D$
+%[text] $\\rightarrow$ Choking occurs after approximately 110 tube diameters.
 %%
-%[text] Some applications of these principles:
-%[text:table]{"columnWidths":[115,-1]}
-%[text] | **Application** | **Why the presentation matters** |
-%[text] | --- | --- |
-%[text] | <p>**High-altitude** </p><p>**aerodynamics**</p> | Surface scattering and accommodation influence aerodynamic forces and heat transfer when intermolecular collisions are infrequent. |
-%[text] | <p>**Wind tunnel** </p><p>**testing**</p> | Matching Mach number alone does not establish comparable rarefaction conditions; the relevant Knudsen number also matters. |
-%[text:table]
+%[text] #### Exit Total Pressure
+%[text] $p\_{t}^\* = p\_{t2} = \\frac{p\_{t1}} {1.58} = \\textbf{ 71.6\~kPa }$
+%[text] $\\rightarrow$ The pressure at the choke point is about ~63% of the inlet *stagnation* pressure.
+%%
+%[text] #### Exit Total Temperature
+%[text] $\\rightarrow$ For steady adiabatic flow with no shaft work:
+%[text] $h\_t = h + \\frac{u^2}{2} = const.$
+%[text] Consequently: $T\_{t2} = T\_{t1} = 309.6\~K$
+%[text] $\\rightarrow$ Friction reduces the total pressure, while the total temperature stays constant because no energy enters or leaves the flow as heat or work.
 %%
 %[text] ## References
 %[text] \[1\] YouTube '[17. Rarefied Gas Dynamics](https://www.youtube.com/watch?v=T46Wb2d_dV8)'.
