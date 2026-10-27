@@ -4,7 +4,7 @@
 %[text] Author: Emmanuel Rodriguez
 %[text] [emmanueljrodriguez.com](https://emmanueljrodriguez.com/)
 %[text] Date: 26OCT2026
-%[text] Location: Suzzallo library, UW, Seattle, WA
+%[text] Location: Renton, WA && Suzzallo library, UW, Seattle, WA
 %%
 %[text:tableOfContents]{"heading":"Table of Contents"}
 %[text] 
@@ -55,6 +55,14 @@ close all % Closes all figures
 %[text] - $\\Delta h\_{total} = h\_2 + \\frac{u\_2^2}{2} - h\_1 - \\frac{u\_1^2}{2}$
 %[text] - total enthalpy is the change in enthalpy measured at two equilibrium end points (station 2 and station 1) \
 %[text] $\\frac{q^\*}{c\_p T\_{t1}} = \\frac{T\_t^\* - T\_{t1}}{T\_{t1}} \\quad \\rightarrow \\quad \\frac{q^\*}{h\_{t1}} = \\frac{T\_t^\*}{T\_{t1}} - 1$
+%[text] From the Rayleigh flow chart, $T\_t / T\_t^\*$ curve:
+%[text] - $\\frac{T\_t}{T\_t^\*} \\cong 0.52$ \
+%[text] $\\rightarrow \\frac{q^\*}{h\_{t1}} = \\frac{T\_t^\*}{T\_{t1}} - 1 = 0.92$
+%%
+%[text] From the energy equation for a perfect gas, for adiabatic flow, we obtain the following temperature ratio - Mach \# relation:
+%[text] $\\frac{T\_{t1}}{T\_1} = 1 + \\frac{\\gamma - 1}{2} M^2 \\quad (2.30)$    \[3\]
+%[text] - @ Mach = 0.4: $\\frac{T\_{t1}}{T\_1} = 1.032$ \
+%[text] (continue here... -ERODRIGUEZ2, 26OCT2026 20:40)
 %%
 %[text] #### Specific Heat Relation
 %[text] For a thermally perfect gas (satisfies the ideal gas law: $p = \\rho R T$) and if it is also calorically perfect, $c\_p = const.$, then $h = c\_p T$. \[3\]
